@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="Simulation.Views.SimView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Simulation.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" SizeChanged="SimView_SizeChanged">
+    <Grid Name="SimGrid" ShowGridLines="False">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/tableBack.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Name="ColumnDef1"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Name ="RowDef1"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Name="Cardpack_label" Content="52" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+        <Image Name="Cardpack_img" Source="/Resources/cardpack.png" Grid.Row="8" Grid.Column="0"/>
+        <Button x:Name="StartButton" Grid.Row="9" Grid.Column="0" Content="Start Game" Background="#FF3A62A4" Foreground="White" Click="StartButton_Click" Margin="5,5,5,5">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="NextStageButton" Grid.Row="9" Grid.Column="1" Content="Next Stage" Background="#FF3A62A4" Foreground="White" Click="NextStageButton_Click" Margin="5,5,5,5" IsEnabled="False">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="NextActionButton" Grid.Row="9" Grid.Column="2" Content="Next Action" Background="#FF3A62A4" Foreground="White" Click="NextActionButton_Click" Margin="5,5,5,5" IsEnabled="False">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="SetTimerButton" Grid.Row="9" Grid.Column="3" Content="Auto" Background="#FF3A62A4" Foreground="White" Click="SetTimerButton_Click" Margin="5,5,5,5" IsEnabled="False">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="KillTimerButton" Grid.Row="9" Grid.Column="4" Content="Stop Auto" Background="#FF3A62A4" Foreground="White" Click="KillTimerButton_Click" Margin="5,5,5,5" IsEnabled="False">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Image Name="cardTableFlop_img" Source="/Resources/backside.png" Grid.Row="4" Grid.Column="3" Grid.RowSpan="2" Visibility="Hidden"/>
+        <Image Name="cardTableTern_img" Source="/Resources/backside.png" Grid.Row="4" Grid.Column="4" Grid.RowSpan="2" Visibility="Hidden"/>
+        <Image Name="cardTableRiver_img" Source="/Resources/backside.png" Grid.Row="4" Grid.Column="5" Grid.RowSpan="2" Visibility="Hidden"/>
+    </Grid>
+</UserControl>

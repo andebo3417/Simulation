@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="Simulation.Views.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Simulation.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" SizeChanged="UserControl_SizeChanged">
+    <Grid ShowGridLines="False">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/tableBack.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Name="ColumnDef1"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Name ="RowDef1"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Name="LabelPlayers" FontWeight="Bold" Grid.Row="1" Grid.ColumnSpan="2" Content="Player Amount" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DockPanel Grid.Row="2" Grid.ColumnSpan="2">
+            <Label Name="PlayersValue" FontWeight="Bold" Content="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Slider Name="SliderPlayers" IsSnapToTickEnabled="True" Width="120" HorizontalAlignment="Right" VerticalAlignment="Center" Value="8" Maximum="8" Minimum="3" TickFrequency="1" ValueChanged="SliderPlayers_ValueChanged"/>
+        </DockPanel>
+
+        <Label Name="LabelAuto" FontWeight="Bold" Grid.Row="3" Grid.ColumnSpan="2" Content="Auto Interval" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DockPanel Grid.Row="4" Grid.ColumnSpan="2">
+            <Label Name="AutoValue" FontWeight="Bold" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Slider Name="SliderAuto" IsSnapToTickEnabled="True" Width="120" HorizontalAlignment="Right" VerticalAlignment="Center" Value="2" Maximum="30" TickFrequency="1" Minimum="1"  ValueChanged="SliderAuto_ValueChanged"/>
+        </DockPanel>
+
+        <Label Name="LabelRandom" FontWeight="Bold" Grid.Row="5" Grid.ColumnSpan="2" Content="Randomn Influence" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DockPanel Grid.Row="6" Grid.ColumnSpan="2">
+            <Label Name="RandomValue" FontWeight="Bold" Content="0.1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Slider Name="SliderRandom" IsSnapToTickEnabled="True" Width="120" HorizontalAlignment="Right" VerticalAlignment="Center" Value="0.1" Maximum="0.5" Minimum="0" TickFrequency="0.05"  ValueChanged="SliderRandom_ValueChanged"/>
+        </DockPanel>
+
+        <Label Name="LabelModifier" FontWeight="Bold" Grid.Row="7" Grid.ColumnSpan="2" Content="Betting likelihood" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DockPanel Grid.Row="8" Grid.ColumnSpan="2">
+            <Label Name="ModifierValue" FontWeight="Bold" Content="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Slider Name="SliderModifier" IsSnapToTickEnabled="True" Width="120" HorizontalAlignment="Right" VerticalAlignment="Center" Value="1" Maximum="2" Minimum="0" TickFrequency="0.1"  ValueChanged="SliderModifier_ValueChanged"/>
+        </DockPanel>
+
+        <Label Name="LabelBlindSize" FontWeight="Bold" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Content="Blind Divider" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DockPanel Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2">
+            <Label Name="BlindSizeValue" FontWeight="Bold" Content="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Slider Name="SliderBlindSize" IsSnapToTickEnabled="True" Width="120" HorizontalAlignment="Right" VerticalAlignment="Center" Value="10" Maximum="100" Minimum="10" TickFrequency="10"  ValueChanged="SliderBlindSize_ValueChanged"/>
+        </DockPanel>
+
+        <Label Name="LabelBlindInc" FontWeight="Bold" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Content="Blind Increase Rate" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DockPanel Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2">
+            <Label Name="BlindIncValue" FontWeight="Bold" Content="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Slider Name="SliderBlindInc" IsSnapToTickEnabled="True" Width="120" HorizontalAlignment="Right" VerticalAlignment="Center" Value="1" Maximum="5" Minimum="1" TickFrequency="0.25"  ValueChanged="SliderBlindInc_ValueChanged"/>
+        </DockPanel>
+
+        <Label FontWeight="Bold" Name="LabelStartWealth" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Content="Starting Wealth" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DockPanel Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="2">
+            <Label Name="StartWealthValue" FontWeight="Bold" Content="10K" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Slider Name="SliderStartWealth" IsSnapToTickEnabled="True" Width="120" HorizontalAlignment="Right" VerticalAlignment="Center" Value="10" Maximum="50" Minimum="10" TickFrequency="1"  ValueChanged="SliderStartWealth_ValueChanged"/>
+        </DockPanel>
+
+        <DockPanel Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="2">
+            <!--<Label Name="LabelCards" FontWeight="Bold" Grid.Row="7" Grid.ColumnSpan="2" Content="Cards open at start" VerticalAlignment="Center"/>-->
+            <!--<CheckBox Name="CheckCards" VerticalAlignment="Center" IsChecked="True" Margin="0,0,0,0" />-->
+        </DockPanel>
+
+        <Button x:Name="SaveButton" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="2" Content="Save Settings" Background="#FF3A62A4" Foreground="White" Margin="5,5,5,5" Click="SaveButton_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+</UserControl>
